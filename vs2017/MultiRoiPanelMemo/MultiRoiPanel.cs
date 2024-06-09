@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace MultiRoiPanelClass
 {
@@ -44,6 +45,34 @@ namespace MultiRoiPanelClass
                 return img;
 
             }
+        }
+    }
+    static class DrawIcon
+    {
+        static public void DrawRoundedTriangle(Graphics g, Brush b, int x, int y, int width, int height, int Angle)
+        {
+            // 三角形の頂点を計算
+            PointF[] points = new PointF[3];
+            points[0] = new PointF(x, y - height / 2); // 頂点
+            points[1] = new PointF(x - width / 2, y + height / 2); // 左下
+            points[2] = new PointF(x + width / 2, y + height / 2); // 右下
+
+            // GraphicsPathを作成し、各辺を追加
+            GraphicsPath path = new GraphicsPath();
+            path.AddLine(points[0].X, points[0].Y, points[1].X, points[1].Y);
+            path.AddLine(points[1].X, points[1].Y, points[2].X, points[2].Y);
+            path.AddLine(points[2].X, points[2].Y, points[0].X, points[0].Y);
+
+            // 回転の中心を設定
+            Matrix rotateMatrix = new Matrix();
+            rotateMatrix.RotateAt(Angle, new PointF(x, y));
+
+            // パスを回転
+            path.Transform(rotateMatrix);
+
+            // パスを描画
+            g.FillPath(b, path);
+
         }
     }
 
@@ -654,9 +683,14 @@ namespace MultiRoiPanelClass
             Point screenMouseUpPoint = panel_Canvas.PointToScreen(e.Location);
             Point panelFrameMouseUpPoint = panel_Frame.PointToClient(screenMouseUpPoint);
 
-            if (selectedCornerIndex == -1 && Distance(panelFrameMouseUpPoint, panelFrameMouseDownPoint) <= 3)
+            if (e.Button == MouseButtons.Left && selectedCornerIndex == -1 && Distance(panelFrameMouseUpPoint, panelFrameMouseDownPoint) <= 3)
             {
                 viewImageFocusPoint = selectedCornerPoint;
+            }
+            else if (e.Button == MouseButtons.Right && selectedCornerIndex >= 0)
+            {
+                string cornerInfo = areaCorners.GetAreaCornerListString(areaCorners.ActiveIndex);
+                Clipboard.SetText(cornerInfo);
             }
 
             panelMouseDown = false;
@@ -906,6 +940,18 @@ namespace MultiRoiPanelClass
             AreaCornerList.Add(new AreaCorner(X, Y, index));
         }
 
+        public string GetAreaCornerListString(int TargetIndex)
+        {
+            List<AreaCorner> targetList = AreaCornerList.FindAll(ac => ac.index == TargetIndex);
+            string result = "";
+
+            for (int i = 0; i < targetList.Count; i++)
+            {
+                result += targetList[i].ToString();
+            }
+
+            return result;
+        }
 
         public void DrawCorners(Graphics g, int offsetX, int offsetY, float magnification)
         {

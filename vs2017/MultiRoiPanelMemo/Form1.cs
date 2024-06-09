@@ -314,9 +314,14 @@ namespace MultiRoiPanelMemo
             Point screenMouseUpPoint = panel_Canvas.PointToScreen(e.Location);
             Point panelFrameMouseUpPoint = panel_Frame.PointToClient(screenMouseUpPoint);
 
-            if (selectedCornerIndex == -1 && Distance(panelFrameMouseUpPoint, panelFrameMouseDownPoint) <= 3)
+            if (e.Button == MouseButtons.Left && selectedCornerIndex == -1 && Distance(panelFrameMouseUpPoint, panelFrameMouseDownPoint) <= 3)
             {
                 viewImageFocusPoint = selectedCornerPoint;
+            }
+            else if (e.Button == MouseButtons.Right && selectedCornerIndex >= 0)
+            {
+                string cornerInfo = areaCorners.GetAreaCornerListString(areaCorners.ActiveIndex);
+                Clipboard.SetText(cornerInfo);
             }
 
             panelMouseDown = false;
