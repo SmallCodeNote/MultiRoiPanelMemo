@@ -83,6 +83,11 @@ namespace MultiRoiPanelClass
             panel_Parent = panel;
             InitializeComponent();
 
+            this.panel_Frame.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
+            this.panel_Canvas.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
+            this.panel_Parent.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
+
+
             panel.Refresh();
         }
 
@@ -389,8 +394,9 @@ namespace MultiRoiPanelClass
             // 
             // toolStripLabel_viewImagePoint
             // 
+            this.toolStripLabel_viewImagePoint.AutoSize = false;
             this.toolStripLabel_viewImagePoint.Name = "toolStripLabel_viewImagePoint";
-            this.toolStripLabel_viewImagePoint.Size = new System.Drawing.Size(40, 22);
+            this.toolStripLabel_viewImagePoint.Size = new System.Drawing.Size(100, 22);
             this.toolStripLabel_viewImagePoint.Text = "{ - , - }";
             this.toolStripLabel_viewImagePoint.ToolTipText = "viewImagePoint";
             // 
@@ -716,7 +722,15 @@ namespace MultiRoiPanelClass
                 int dx = (int)((panelFrameMouseMovePoint.X - panelFrameMouseDownPoint.X) / magnification);
                 int dy = (int)((panelFrameMouseMovePoint.Y - panelFrameMouseDownPoint.Y) / magnification);
 
-                areaCorners.UpdateCorner(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                if (EditModeKey == "Rectangle")
+                {
+                    areaCorners.UpdateAreaPosition(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                }
+                else
+                {
+                    areaCorners.UpdateCorner(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                }
+
                 panel_Frame.Refresh();
 
                 if (textBox_EditView.Visible)
@@ -737,6 +751,18 @@ namespace MultiRoiPanelClass
                 toolStripButton_OpenFile_Click(null, null);
             }
         }
+        private void panel_Frame_MouseWheel(object sender, MouseEventArgs e)
+        {
+            int m = int.Parse(toolStripComboBox_Magnification.Text);
+
+            m += e.Delta / 20;
+
+            if (m > 0) toolStripComboBox_Magnification.Text = m.ToString();
+
+            areaCorners.SearchRadius = (int)(5 / magnification);
+            panel_Frame.Refresh();
+        }
+
 
         private void toolStripComboBox_Magnification_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -754,6 +780,7 @@ namespace MultiRoiPanelClass
 
         private void toolStripComboBox_CanvasExtentionFactor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            areaCorners.SearchRadius = (int)(5 / magnification);
             panel_Frame.Refresh();
         }
 
@@ -792,6 +819,9 @@ namespace MultiRoiPanelClass
         private void toolStripButton_SetOrgSize_Click(object sender, EventArgs e)
         {
             toolStripComboBox_Magnification.Text = "100";
+            areaCorners.SearchRadius = (int)(5 / magnification);
+            panel_Frame.Refresh();
+
         }
         private void toolStripButton_RemoveArea_Click(object sender, EventArgs e)
         {
@@ -886,6 +916,24 @@ namespace MultiRoiPanelClass
             }
         }
 
+        public void UpdateAreaPosition(int i, Point point)
+        {
+            if (i < AreaCornerList.Count)
+            {
+                int targetIndex = AreaCornerList[i].index;
+                float targetX = AreaCornerList[i].X;
+                float targetY = AreaCornerList[i].Y;
+
+                foreach (var item in AreaCornerList)
+                {
+                    if (item.index == targetIndex)
+                    {
+                        item.X += (point.X - targetX);
+                        item.Y += (point.Y - targetY);
+                    }
+                }
+            }
+        }
         public void RemoveArea()
         {
             RemoveArea(this.ActiveIndex);
@@ -1046,7 +1094,7 @@ namespace MultiRoiPanelClass
         }
         public override string ToString()
         {
-            return "{" + X.ToString() + "," + Y.ToString() + "}";
+            return "{" + X.ToString("0") + "," + Y.ToString("0") + "}";
         }
 
         public Point Point(int offsetX = 0, int offsetY = 0, float magnification = 1.0f)

@@ -22,6 +22,9 @@ namespace MultiRoiPanelMemo
         public Form1()
         {
             InitializeComponent();
+            this.panel_Frame.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
+            this.panel_Canvas.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
+            this.panel_Parent.MouseWheel += new MouseEventHandler(panel_Frame_MouseWheel);
         }
 
         MultiRoiPanel MRP;
@@ -347,7 +350,15 @@ namespace MultiRoiPanelMemo
                 int dx = (int)((panelFrameMouseMovePoint.X - panelFrameMouseDownPoint.X) / magnification);
                 int dy = (int)((panelFrameMouseMovePoint.Y - panelFrameMouseDownPoint.Y) / magnification);
 
-                areaCorners.UpdateCorner(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                if (EditModeKey == "Rectangle")
+                {
+                    areaCorners.UpdateAreaPosition(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                }
+                else
+                {
+                    areaCorners.UpdateCorner(selectedCornerIndex, selectedCornerPoint + new Size(dx, dy));
+                }
+
                 panel_Frame.Refresh();
 
                 if (textBox_EditView.Visible)
@@ -369,12 +380,24 @@ namespace MultiRoiPanelMemo
             }
         }
 
+        private void panel_Frame_MouseWheel(object sender, MouseEventArgs e)
+        {
+            int m = int.Parse(toolStripComboBox_Magnification.Text);
+
+            m += e.Delta / 20;
+
+            if (m > 0) toolStripComboBox_Magnification.Text = m.ToString();
+
+            areaCorners.SearchRadius = (int)(5 / magnification);
+            panel_Frame.Refresh();
+        }
+
         private void toolStripComboBox_Magnification_SelectedIndexChanged(object sender, EventArgs e)
         {
             areaCorners.SearchRadius = (int)(5 / magnification);
             panel_Frame.Refresh();
         }
-
+        
         private void toolStripButton_SetCenter_Click(object sender, EventArgs e)
         {
             if (viewImage != null)
@@ -426,11 +449,14 @@ namespace MultiRoiPanelMemo
         private void toolStripButton_SetOrgSize_Click(object sender, EventArgs e)
         {
             toolStripComboBox_Magnification.Text = "100";
+            areaCorners.SearchRadius = (int)(5 / magnification);
+            panel_Frame.Refresh();
         }
         private void toolStripButton_RemoveArea_Click(object sender, EventArgs e)
         {
             areaCorners.RemoveArea();
             panel_Frame.Refresh();
         }
+
     }
 }

@@ -34,13 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Parent = new System.Windows.Forms.Panel();
             this.toolStripContainer_Main = new System.Windows.Forms.ToolStripContainer();
-            this.panel_Frame = new System.Windows.Forms.Panel();
-            this.textBox_EditView = new System.Windows.Forms.TextBox();
-            this.button_MoveRight = new System.Windows.Forms.Button();
-            this.button_MoveDown = new System.Windows.Forms.Button();
-            this.button_MoveLeft = new System.Windows.Forms.Button();
-            this.button_MoveUp = new System.Windows.Forms.Button();
-            this.panel_Canvas = new System.Windows.Forms.Panel();
             this.toolStrip_ImageControl = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_OpenFile = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator_SizeControl = new System.Windows.Forms.ToolStripSeparator();
@@ -58,14 +51,47 @@
             this.toolStripSeparator_CanvasView = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBox_CanvasExtentionFactor = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton_ShowMap = new System.Windows.Forms.ToolStripButton();
+            this.panel_Frame = new System.Windows.Forms.Panel();
+            this.textBox_EditView = new System.Windows.Forms.TextBox();
+            this.button_MoveRight = new System.Windows.Forms.Button();
+            this.button_MoveDown = new System.Windows.Forms.Button();
+            this.button_MoveLeft = new System.Windows.Forms.Button();
+            this.button_MoveUp = new System.Windows.Forms.Button();
+            this.panel_Canvas = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base64EncodeImage)).BeginInit();
             this.panel_Parent.SuspendLayout();
             this.toolStripContainer_Main.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer_Main.ContentPanel.SuspendLayout();
             this.toolStripContainer_Main.SuspendLayout();
             this.toolStrip_ImageControl.SuspendLayout();
             this.panel_Frame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base64EncodeImage)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button_Base64Encode
+            // 
+            this.button_Base64Encode.Location = new System.Drawing.Point(12, 12);
+            this.button_Base64Encode.Name = "button_Base64Encode";
+            this.button_Base64Encode.Size = new System.Drawing.Size(128, 23);
+            this.button_Base64Encode.TabIndex = 2;
+            this.button_Base64Encode.Text = "Base64Encode";
+            this.button_Base64Encode.UseVisualStyleBackColor = true;
+            this.button_Base64Encode.Click += new System.EventHandler(this.button_Base64Encode_Click);
+            // 
+            // pictureBox_Base64EncodeImage
+            // 
+            this.pictureBox_Base64EncodeImage.Location = new System.Drawing.Point(157, 12);
+            this.pictureBox_Base64EncodeImage.Name = "pictureBox_Base64EncodeImage";
+            this.pictureBox_Base64EncodeImage.Size = new System.Drawing.Size(100, 89);
+            this.pictureBox_Base64EncodeImage.TabIndex = 3;
+            this.pictureBox_Base64EncodeImage.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(518, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(500, 500);
+            this.panel1.TabIndex = 4;
             // 
             // panel_Parent
             // 
@@ -115,7 +141,7 @@
             this.toolStripButton_ShowMap});
             this.toolStrip_ImageControl.Location = new System.Drawing.Point(3, 0);
             this.toolStrip_ImageControl.Name = "toolStrip_ImageControl";
-            this.toolStrip_ImageControl.Size = new System.Drawing.Size(374, 25);
+            this.toolStrip_ImageControl.Size = new System.Drawing.Size(434, 25);
             this.toolStrip_ImageControl.TabIndex = 0;
             // 
             // toolStripButton_OpenFile
@@ -185,8 +211,9 @@
             // 
             // toolStripLabel_viewImagePoint
             // 
+            this.toolStripLabel_viewImagePoint.AutoSize = false;
             this.toolStripLabel_viewImagePoint.Name = "toolStripLabel_viewImagePoint";
-            this.toolStripLabel_viewImagePoint.Size = new System.Drawing.Size(40, 22);
+            this.toolStripLabel_viewImagePoint.Size = new System.Drawing.Size(100, 22);
             this.toolStripLabel_viewImagePoint.Text = "{ - , - }";
             this.toolStripLabel_viewImagePoint.ToolTipText = "viewImagePoint";
             // 
@@ -350,32 +377,6 @@
             this.panel_Canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_Canvas_MouseMove);
             this.panel_Canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_Canvas_MouseUp);
             // 
-            // button_Base64Encode
-            // 
-            this.button_Base64Encode.Location = new System.Drawing.Point(12, 12);
-            this.button_Base64Encode.Name = "button_Base64Encode";
-            this.button_Base64Encode.Size = new System.Drawing.Size(128, 23);
-            this.button_Base64Encode.TabIndex = 2;
-            this.button_Base64Encode.Text = "Base64Encode";
-            this.button_Base64Encode.UseVisualStyleBackColor = true;
-            this.button_Base64Encode.Click += new System.EventHandler(this.button_Base64Encode_Click);
-            // 
-            // pictureBox_Base64EncodeImage
-            // 
-            this.pictureBox_Base64EncodeImage.Location = new System.Drawing.Point(157, 12);
-            this.pictureBox_Base64EncodeImage.Name = "pictureBox_Base64EncodeImage";
-            this.pictureBox_Base64EncodeImage.Size = new System.Drawing.Size(100, 89);
-            this.pictureBox_Base64EncodeImage.TabIndex = 3;
-            this.pictureBox_Base64EncodeImage.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(518, 107);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 500);
-            this.panel1.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -389,6 +390,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base64EncodeImage)).EndInit();
             this.panel_Parent.ResumeLayout(false);
             this.toolStripContainer_Main.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer_Main.BottomToolStripPanel.PerformLayout();
@@ -399,7 +401,6 @@
             this.toolStrip_ImageControl.PerformLayout();
             this.panel_Frame.ResumeLayout(false);
             this.panel_Frame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Base64EncodeImage)).EndInit();
             this.ResumeLayout(false);
 
         }
