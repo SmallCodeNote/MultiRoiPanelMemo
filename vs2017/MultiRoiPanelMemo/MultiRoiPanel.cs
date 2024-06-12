@@ -24,6 +24,8 @@ namespace MultiRoiPanelClass
         static private string iconString_Minus = @"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAG0AAABtAFMIk34AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAMlJREFUSIntlk0KwyAQhb+R3CU7yaFKk/YAOUsXvUSvkkV/Fz1JYhcZwUVaIp0SChkYlFHf04fyBBBgB1yBHghfZq9YjWKzNwB9l40oWwkcgCM2sdETXEhkqUIIWCRQRbkc4JR1MNp9iuXcx2kGsRIsT1BMFUWkBHwmVhdCuE0NxFfnk3vckv9q22S9j/VlJAJOwDMTq5tNoFpO6pkb/39NV4JZBEPSt8QFGArgwWiZtYhYWeZW2zuM3vkr069h/FpEg7b6tpwVXF6EFMTzkAGT6QAAAABJRU5ErkJggg==";
         static private string iconString_Next = @"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAG0AAABtAFMIk34AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAYNJREFUSIm11rFrVFEQxeHvbIKVnUWqYGFhlZBeEMTCSrCJWAiKiImCjVj4B9iLYCEiNqKksdDaUlAbQUNUFCsREW0EEVSSsdj3YAnustl9DgwXHsP5zdwHZy4E5/EWm6gpc7PRWm20XehAdFiupqHtx03c1k2cbSZ4Y+BalqpKF4ml9rp66DXUrY66H9Tq9UZVJVlIMjMNaSggyRxeYSPJ8SQjm9kxALua8xfu42WSY0nSFaCNe7iIz3iA9STL44LGHfsrbuESvmENz5Mc7QrQxifcwGX8wcMkT5Mc7grQxkdcwxXsw+Mkp7sEwF6cxB7cwaN/Fc1OILwbyziCFzhQVc+GFe8EMINDOIGfOIO71XjDtIAFnMIcruNqVf0Yt7PWWhe3GdZ88/2DvresYX5Ms1tsdUdN8Ls5v+NgVT0Zt+PBGAqoqi9JFrFRVRM77ch/UFXrkwq30TPg3dOKbdOFrVm811+ZK0m6WpnnmvMd/d35v5b+Cv2nRbugu3q2vG7E8xfeAwNcia6/qAAAAABJRU5ErkJggg==";
         static private string iconString_Prev = @"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAG0AAABtAFMIk34AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAYhJREFUSIm11r2KFFEQhuGn2sXUwMBoESNNHBYx8wcDL2AiMRBMlBnFxEgvwEgEDQ0UTBQTo80MxcxAVFyVZU0MRARBM4WdMjjdMog907PTFhQ0nDrfW1QdqhoCl/Ee28glfbvWGtfaLvUg2ubjqGkHcRf39GMXMaq1/5RlLTP14VhrylWhqqmTnrKf1qqqmWFzLCJ2RcThWTE7AkREFRFn8BavI2JfL4AoNsQrPMLP+mj30oCIOI0XeIIfuIqH8+7NBUTE8Yh4hqfKy7iG2/jcJbGVGcLHcAOnlJJcx8cuonMBEXEeD/BVyXhh4cbaSrSO+9iLc9jfKyAzv2XmBRzFd9zEFezpBTAFepmZJzDEAdypv1t7txBgCrSOQ0rTh7iFI10hzWgddBxkq3iszJut+u7qXzGDRnfhUZGZnzLzLE4q/YFfbfE7HnaZ+Vx5BIPM/NIW17lZLZAJ3syKqUzN7mVg/9CFyQo2lZU5iog+VmYoKxM+ULb//1r6o4Y4xob+flve1eLxG0PXCwG6RTGAAAAAAElFTkSuQmCC";
+        static private string iconString_FromClip = @"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAG0AAABtAFMIk34AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAArlJREFUSIm1lk9I02EYxz9v++d+LgoKhGUgOFiCxEQnBDvsEHW0rglGEbnq2GUg6+IlUtqlKCRkhw0P0qnb9FAQEh50kdPRnNhNhOrwKwinezrs3fw5f5OF9oWX3/u8L+/zff68z/v8ABTwACgAe4Acc+xpXTGtm4cnoLTZiCnNFgReA2+o4hZwWc9xOBzK5XI5K5WKr1Kp/N7d3X0C/KI57mkP1pR26RTQJyI5AMMwit3d3YGenh7a29txu90AmKbJzMwMQEhEPjfTrpQKActABYs7V10u16JhGCWv11seHx+XRmxsbDSG4LGI0Di09wKI00LsL5fL4Xg8zvT0NKVSifn5+QOWbW1tATAxMcHU1FS5WCx2HBGmOmrWjACyvb0t0Wi0aeKcTqdsbm5KOBz+Azz7Fw/qmJubwzRNW2s8Hg+GYbRiOAC2BLlcjqWlJdsDbrebdDpNoVBwAdeVUh+Bd6JNb4kgm80yOTlpSzAwMMDg4CD5fF5M0zwDvAWySqmbIrJjd+ZQDlpBLQdAH/ATiLecg1QqRSaTsfWgt7eXZDK5b53IslLqJXAXeNpSiPx+P/39/bYEXV1ddsvvgTGl1GkROXA7bAnC4TCBQMCWoK2tzW75m/5eBFYbNw/lIJFINK2DSCRizUEKGAW8ev8acAn4wFE5iMViDA0N2Xrg8/msYgfwAvikZSeQBM5jWTiEUqnEwsKCLUFnZyfBYLAmrgBngedajmgvRoB0U4J8Ps/s7KwtQSgUYnh4uCYK8AhY1PIdqk/+F+uZY9WBvvevqD7NP4BzHFUH0Wh0x+Fw2Ja9Fevr69azY8ANICEi35VSF2ob1oZzhWr8Wn3JBMiIyAqAUuqUiFT0vN5wnECRasu8zX7LbBUepVS9IpVStel9/f0K1d75v5r+KFTDFAPWOLnfllWtXP0FM+rYTfmhG+UAAAAASUVORK5CYII=";
+        static private string iconString_ToClip = @"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAG0AAABtAFMIk34AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAr5JREFUSIm1ls9rE1EQxz/P/Gq3ORShCqGFYgOxUCRSchB6yEE8Cb140eKPg9bVq5fgQQ8BLykUPdlSSi8hQv0L0twKharUBqwNTdMUrBKC6GEVJEkzHrLWNH2bFKxfeOzu7Nv5zMx7u7MACngA5IB9QP5x7Nu+TNs3D0/AqdMwlU0LAS+BORq6AVywz3G5XMrj8bjr9bq/Xq//rNVqT4AfOOuuncGmslM6BVwUkXUAwzDyQ0NDweHhYXp6evB6vQBYlkUqlQIIi0jWybtSKgy8B+o0pXPZ4/G8MQyj0N3dXY3H49KqnZ2d1hI8EhFah529AOJuAgeq1WokFosxPz9PoVAgk8kciqxUKgGQSCSYnZ2t5vP5s3bEZ0Sk7JTRn2huAVIulyUajTounNvtlt3dXYlEIr+AF8BrYAtwd8rgQEtLS1iWpY3G5/NhGAaWZZ0C7gDfgJsiUtPN1wLW19dZW1vTAvr6+shms+RyOQ9QAq6JyDvtZCdAOp1mampK+0Bvby/FYhGlFCIyALxVSu0Cj0UkpXvmyBq0097enkxOTopSSoDvwFPgOY0tef1Ya7CwsEAymdRmMDIywszMDKurq5VsNlsEYjRKNQc8U0q96liiQCDA6OioFjA4OAiA1+sVIANcBSaANHAPON8REIlECAaDWkBXV9ehaxH5AiSUUl4aZToHfGoLmJ6eJh6PawFjY2MsLy8fsYtIRSlVBgY6AkzTZHx8XAvw+/1au62vwOlmgxZQKBRYWVnReujv7ycUCjkBFI3d0x6wsbHB4uKi1kM4HGZiYsIJ4ML+grYFmKaJaZpOTtqpAnxuC4hGoxWXyyWt9lZtb2/rgovYi33QrJobziXgCmAcM1oBkiLyofVGc8NxA3kaLfM2f1vmceVTSuneyEn7uAWN3vm/mv59aJTJBDY5ud+Wj7Zz9Rv7JJOYr+svbAAAAABJRU5ErkJggg==";
 
         static public Image icon_Center { get { return ImageFromBase64String(iconString_Center); } }
         static public Image icon_OriginalSize { get { return ImageFromBase64String(iconString_OriginalSize); } }
@@ -35,6 +37,8 @@ namespace MultiRoiPanelClass
         static public Image icon_Minus { get { return ImageFromBase64String(iconString_Minus); } }
         static public Image icon_Next { get { return ImageFromBase64String(iconString_Next); } }
         static public Image icon_Prev { get { return ImageFromBase64String(iconString_Prev); } }
+        static public Image icon_FromClip { get { return ImageFromBase64String(iconString_FromClip); } }
+        static public Image icon_ToClip { get { return ImageFromBase64String(iconString_ToClip); } }
 
         static public Image ImageFromBase64String(string iconImage)
         {
@@ -102,6 +106,7 @@ namespace MultiRoiPanelClass
                 if (str == "toolStripButton_OpenFile.Image") return MultiRoiPanelIcon.icon_OpenFile;
                 if (str == "toolStripButton_RemoveArea.Image") return MultiRoiPanelIcon.icon_Minus;
                 if (str == "toolStripButton_AddArea.Image") return MultiRoiPanelIcon.icon_Puls;
+                if (str == "toolStripButton_AddFromClip.Image") return MultiRoiPanelIcon.icon_FromClip;
 
                 return MultiRoiPanelIcon.icon_Center;
             }
@@ -126,8 +131,9 @@ namespace MultiRoiPanelClass
         private ToolStripSeparator toolStripSeparator_PositionView;
         private ToolStripLabel toolStripLabel_viewImagePoint;
         private ToolStripSeparator toolStripSeparator_AreaControl;
-        private ToolStripButton toolStripButton_RemoveArea;
+        private ToolStripButton toolStripButton_AddFromClip;
         private ToolStripButton toolStripButton_AddArea;
+        private ToolStripButton toolStripButton_RemoveArea;
         private ToolStripLabel toolStripLabel_ActiveAreaIndex;
         private ToolStripButton toolStripButton_EditMode;
         private ToolStripSeparator toolStripSeparator_CanvasView;
@@ -252,8 +258,9 @@ namespace MultiRoiPanelClass
             this.toolStripSeparator_PositionView = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_viewImagePoint = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator_AreaControl = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_RemoveArea = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_AddFromClip = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_AddArea = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_RemoveArea = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_ActiveAreaIndex = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton_EditMode = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator_CanvasView = new System.Windows.Forms.ToolStripSeparator();
@@ -315,8 +322,9 @@ namespace MultiRoiPanelClass
             this.toolStripSeparator_PositionView,
             this.toolStripLabel_viewImagePoint,
             this.toolStripSeparator_AreaControl,
-            this.toolStripButton_RemoveArea,
+            this.toolStripButton_AddFromClip,
             this.toolStripButton_AddArea,
+            this.toolStripButton_RemoveArea,
             this.toolStripLabel_ActiveAreaIndex,
             this.toolStripButton_EditMode,
             this.toolStripSeparator_CanvasView,
@@ -324,7 +332,7 @@ namespace MultiRoiPanelClass
             this.toolStripButton_ShowMap});
             this.toolStrip_ImageControl.Location = new System.Drawing.Point(3, 0);
             this.toolStrip_ImageControl.Name = "toolStrip_ImageControl";
-            this.toolStrip_ImageControl.Size = new System.Drawing.Size(374, 25);
+            this.toolStrip_ImageControl.Size = new System.Drawing.Size(457, 25);
             this.toolStrip_ImageControl.TabIndex = 0;
             // 
             // toolStripButton_OpenFile
@@ -405,15 +413,15 @@ namespace MultiRoiPanelClass
             this.toolStripSeparator_AreaControl.Name = "toolStripSeparator_AreaControl";
             this.toolStripSeparator_AreaControl.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton_RemoveArea
+            // toolStripButton_AddFromClip
             // 
-            this.toolStripButton_RemoveArea.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_RemoveArea.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_RemoveArea.Image")));
-            this.toolStripButton_RemoveArea.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_RemoveArea.Name = "toolStripButton_RemoveArea";
-            this.toolStripButton_RemoveArea.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton_RemoveArea.Text = "RemoveArea";
-            this.toolStripButton_RemoveArea.Click += new System.EventHandler(this.toolStripButton_RemoveArea_Click);
+            this.toolStripButton_AddFromClip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_AddFromClip.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_AddFromClip.Image")));
+            this.toolStripButton_AddFromClip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_AddFromClip.Name = "toolStripButton_AddFromClip";
+            this.toolStripButton_AddFromClip.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_AddFromClip.Tag = "AddFromClip";
+            this.toolStripButton_AddFromClip.Click += new System.EventHandler(this.toolStripButton_AddFromClip_Click);
             // 
             // toolStripButton_AddArea
             // 
@@ -424,6 +432,16 @@ namespace MultiRoiPanelClass
             this.toolStripButton_AddArea.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_AddArea.Text = "AddArea";
             this.toolStripButton_AddArea.Click += new System.EventHandler(this.toolStripButton_AddArea_Click);
+            // 
+            // toolStripButton_RemoveArea
+            // 
+            this.toolStripButton_RemoveArea.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_RemoveArea.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_RemoveArea.Image")));
+            this.toolStripButton_RemoveArea.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_RemoveArea.Name = "toolStripButton_RemoveArea";
+            this.toolStripButton_RemoveArea.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_RemoveArea.Text = "RemoveArea";
+            this.toolStripButton_RemoveArea.Click += new System.EventHandler(this.toolStripButton_RemoveArea_Click);
             // 
             // toolStripLabel_ActiveAreaIndex
             // 
@@ -553,7 +571,7 @@ namespace MultiRoiPanelClass
             this.panel_Canvas.BackColor = System.Drawing.SystemColors.Control;
             this.panel_Canvas.Location = new System.Drawing.Point(116, 60);
             this.panel_Canvas.Name = "panel_Canvas";
-            this.panel_Canvas.Size = new System.Drawing.Size(263, 242);
+            this.panel_Canvas.Size = new System.Drawing.Size(1, 1);
             this.panel_Canvas.TabIndex = 4;
             this.panel_Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Canvas_Paint);
             this.panel_Canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Canvas_MouseDown);
@@ -826,6 +844,16 @@ namespace MultiRoiPanelClass
         private void toolStripButton_RemoveArea_Click(object sender, EventArgs e)
         {
             areaCorners.RemoveArea();
+            textBox_EditView.Text = areaCorners.ToString();
+
+            panel_Frame.Refresh();
+        }
+        private void toolStripButton_AddFromClip_Click(object sender, EventArgs e)
+        {
+            string TextContents = Clipboard.GetText();
+            areaCorners.FromString(TextContents);
+            textBox_EditView.Text = areaCorners.ToString();
+
             panel_Frame.Refresh();
         }
 
@@ -982,6 +1010,40 @@ namespace MultiRoiPanelClass
             }
             return result;
         }
+
+        public void FromString(string str)
+        {
+            if (AreaCornerList != null)
+            {
+                AreaCornerList.Clear();
+            }
+            else
+            {
+                AreaCornerList = new List<AreaCorner>();
+            }
+
+            var lines = str.Split(new[] { "\r\n" }, StringSplitOptions.None);
+            int index = 0;
+
+            foreach (var line in lines)
+            {
+                var corners = line.Split(new[] { "}" }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (corners.Length == 4)
+                {
+                    foreach (var corner in corners)
+                    {
+
+                        var parts = corner.TrimStart('{').Split(',');
+                        var areaCorner = new AreaCorner(float.Parse(parts[0]), float.Parse(parts[1]), index);
+                        AreaCornerList.Add(areaCorner);
+
+                    }
+                    index++;
+                }
+            }
+        }
+
 
         public void AddCorner(float X, float Y, int index)
         {

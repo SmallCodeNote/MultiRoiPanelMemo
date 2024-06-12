@@ -105,6 +105,8 @@ namespace MultiRoiPanelMemo
 
             toolStripButton_AddArea.Image = MultiRoiPanelIcon.icon_Puls;
 
+            toolStripButton_AddFromClip.Image = MultiRoiPanelIcon.icon_FromClip;
+
             areaCorners = new AreaCorners();
 
             MRP = new MultiRoiPanel(panel1);
@@ -455,8 +457,18 @@ namespace MultiRoiPanelMemo
         private void toolStripButton_RemoveArea_Click(object sender, EventArgs e)
         {
             areaCorners.RemoveArea();
+            textBox_EditView.Text = areaCorners.ToString();
+
             panel_Frame.Refresh();
         }
 
+        private void toolStripButton_AddFromClip_Click(object sender, EventArgs e)
+        {
+            string TextContents = Clipboard.GetText();
+            areaCorners.FromString(TextContents);
+            textBox_EditView.Text = areaCorners.ToString();
+
+            panel_Frame.Refresh();
+        }
     }
 }

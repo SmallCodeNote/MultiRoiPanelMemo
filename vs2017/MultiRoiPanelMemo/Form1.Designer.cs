@@ -44,8 +44,9 @@
             this.toolStripSeparator_PositionView = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_viewImagePoint = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator_AreaControl = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_RemoveArea = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_AddFromClip = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_AddArea = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_RemoveArea = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel_ActiveAreaIndex = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton_EditMode = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator_CanvasView = new System.Windows.Forms.ToolStripSeparator();
@@ -132,8 +133,9 @@
             this.toolStripSeparator_PositionView,
             this.toolStripLabel_viewImagePoint,
             this.toolStripSeparator_AreaControl,
-            this.toolStripButton_RemoveArea,
+            this.toolStripButton_AddFromClip,
             this.toolStripButton_AddArea,
+            this.toolStripButton_RemoveArea,
             this.toolStripLabel_ActiveAreaIndex,
             this.toolStripButton_EditMode,
             this.toolStripSeparator_CanvasView,
@@ -141,7 +143,7 @@
             this.toolStripButton_ShowMap});
             this.toolStrip_ImageControl.Location = new System.Drawing.Point(3, 0);
             this.toolStrip_ImageControl.Name = "toolStrip_ImageControl";
-            this.toolStrip_ImageControl.Size = new System.Drawing.Size(434, 25);
+            this.toolStrip_ImageControl.Size = new System.Drawing.Size(457, 25);
             this.toolStrip_ImageControl.TabIndex = 0;
             // 
             // toolStripButton_OpenFile
@@ -222,15 +224,15 @@
             this.toolStripSeparator_AreaControl.Name = "toolStripSeparator_AreaControl";
             this.toolStripSeparator_AreaControl.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton_RemoveArea
+            // toolStripButton_AddFromClip
             // 
-            this.toolStripButton_RemoveArea.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_RemoveArea.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_RemoveArea.Image")));
-            this.toolStripButton_RemoveArea.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_RemoveArea.Name = "toolStripButton_RemoveArea";
-            this.toolStripButton_RemoveArea.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton_RemoveArea.Text = "RemoveArea";
-            this.toolStripButton_RemoveArea.Click += new System.EventHandler(this.toolStripButton_RemoveArea_Click);
+            this.toolStripButton_AddFromClip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_AddFromClip.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_AddFromClip.Image")));
+            this.toolStripButton_AddFromClip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_AddFromClip.Name = "toolStripButton_AddFromClip";
+            this.toolStripButton_AddFromClip.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_AddFromClip.Tag = "AddFromClip";
+            this.toolStripButton_AddFromClip.Click += new System.EventHandler(this.toolStripButton_AddFromClip_Click);
             // 
             // toolStripButton_AddArea
             // 
@@ -241,6 +243,16 @@
             this.toolStripButton_AddArea.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_AddArea.Text = "AddArea";
             this.toolStripButton_AddArea.Click += new System.EventHandler(this.toolStripButton_AddArea_Click);
+            // 
+            // toolStripButton_RemoveArea
+            // 
+            this.toolStripButton_RemoveArea.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_RemoveArea.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_RemoveArea.Image")));
+            this.toolStripButton_RemoveArea.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_RemoveArea.Name = "toolStripButton_RemoveArea";
+            this.toolStripButton_RemoveArea.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_RemoveArea.Text = "RemoveArea";
+            this.toolStripButton_RemoveArea.Click += new System.EventHandler(this.toolStripButton_RemoveArea_Click);
             // 
             // toolStripLabel_ActiveAreaIndex
             // 
@@ -428,8 +440,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator_PositionView;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_viewImagePoint;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator_AreaControl;
-        private System.Windows.Forms.ToolStripButton toolStripButton_RemoveArea;
+        private System.Windows.Forms.ToolStripButton toolStripButton_AddFromClip;
         private System.Windows.Forms.ToolStripButton toolStripButton_AddArea;
+        private System.Windows.Forms.ToolStripButton toolStripButton_RemoveArea;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_ActiveAreaIndex;
         private System.Windows.Forms.ToolStripButton toolStripButton_EditMode;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator_CanvasView;
